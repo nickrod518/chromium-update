@@ -19,7 +19,7 @@ $client = new-object System.Net.WebClient
 $client.DownloadFile($source, $zip)
 
 # unzip the download into the install directory
-$installDir.Copyhere($shell_app.namespace($zip).items(), 0x14)
+$shell_app.namespace($installDir).Copyhere($shell_app.namespace($zip).items(), 0x14)
 
 # clean up
 if ($clean) { Remove-Item $zip }
